@@ -2,6 +2,6 @@
 <Context antiJARLocking="true" path="/csps-web">
     <Resource name="jdbc/csps" auth="Container"
               type="javax.sql.DataSource" maxActive="100" maxIdle="30" maxWait="10000"
-              driverClassName="org.postgresql.Driver" username="csps" password="csps"
-              url="jdbc:postgresql://localhost:5432/csps"/>
+              driverClassName="org.hsqldb.jdbcDriver" username="sa" password=""
+              url="jdbc:hsqldb:file:${catalina.home}/data/cssps;shutdown=true"/>
 </Context>

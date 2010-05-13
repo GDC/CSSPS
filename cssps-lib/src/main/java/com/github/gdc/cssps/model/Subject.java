@@ -10,7 +10,8 @@ import javax.persistence.Entity;
  * @author Edem Morny
  */
 @Entity
-public class Subject extends Model<Subject>{
+public class Subject extends AuditedModel<Subject>{
+    private static final long serialVersionUID = -8472572831660058862L;
     private String name;
 
     public String getName() {

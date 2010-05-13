@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  * @author Edem Morny
  */
 @Entity
-public class Programme extends Model<Programme> {
+public class Programme extends AuditedModel<Programme> {
     private String name;
 
     public String getName() {

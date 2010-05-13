@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
  * @author Edem Morny
  */
 @Entity
-public class Exam extends Model<Exam> {
+public class Exam extends AuditedModel<Exam> {
 
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)

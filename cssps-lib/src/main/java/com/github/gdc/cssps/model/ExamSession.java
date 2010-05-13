@@ -1,8 +1,10 @@
 
 package com.github.gdc.cssps.model;
 
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -11,7 +13,9 @@ import javax.persistence.OneToOne;
  * @author Edem Morny
  */
 @Entity
-public class ExamSession extends Model<ExamSession>{
+public class ExamSession extends AuditedModel<ExamSession>{
+    @OneToMany(mappedBy = "session")
+    private List<Choice> choices;
     private static final long serialVersionUID = 4450998950834796171L;
     @ManyToOne
     private Exam exam;
@@ -64,4 +68,13 @@ public class ExamSession extends Model<ExamSession>{
         return "com.github.gdc.csps.model.ExamSession[id=" + getId() + "]";
     }
 
+    public List<Choice> getChoices() {
+        return choices;
+    }
+
+    public void setChoices(List<Choice> choices) {
+        this.choices = choices;
+    }
+
+    
 }

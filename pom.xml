@@ -49,7 +49,7 @@
         </profile>
     </profiles>
     <modules>
-        <module>csps-web</module>
+        <module>cssps-web</module>
         <module>cssps-lib</module>
     </modules>
     <!-- -->
@@ -82,6 +82,7 @@
         <slf4j.version>1.5.8</slf4j.version>
         <drools.version>5.0.1</drools.version>
         <jpa2.version>1.0.0.Final</jpa2.version>
+        <hsqldb.version>1.8.0.10</hsqldb.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -131,6 +132,11 @@
                 <groupId>org.hibernate.javax.persistence</groupId>
                 <artifactId>hibernate-jpa-2.0-api</artifactId>
                 <version>${jpa2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

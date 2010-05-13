@@ -8,7 +8,8 @@ import javax.persistence.Entity;
  * @author Edem Morny
  */
 @Entity
-public class OriginSchool extends Model<OriginSchool>{
+public class OriginSchool extends AuditedModel<OriginSchool>{
+    private static final long serialVersionUID = 428827157239831829L;
     private String name;
     private String location;
 

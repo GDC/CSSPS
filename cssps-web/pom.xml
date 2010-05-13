@@ -7,9 +7,9 @@
         <artifactId>csps-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>csps-web</artifactId>
+    <artifactId>cssps-web</artifactId>
     <packaging>war</packaging>
-    <name>CSPS Web App</name>
+    <name>CSSPS Web App</name>
     <dependencies>
         <dependency>
             <groupId>org.drools</groupId>
@@ -30,6 +30,11 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
             <scope>runtime</scope>
         </dependency>
       <!-- <dependency>

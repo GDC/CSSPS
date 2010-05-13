@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
  * @author Edem Morny
  */
 @Entity
-public class Student extends Model<Student> {
+public class Student extends AuditedModel<Student> {
     @OneToMany(mappedBy = "student")
     private List<ExamSession> examSessions;
     private static final long serialVersionUID = 8033084129011434043L;
