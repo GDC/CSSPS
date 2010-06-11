@@ -1,5 +1,7 @@
-package com.github.gdc.cssps.model;
+package com.github.gdc.cssps.model.school;
 
+import com.github.gdc.cssps.model.AuditedModel;
+import com.github.gdc.cssps.model.exam.ExamSession;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 

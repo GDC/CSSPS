@@ -1,5 +1,7 @@
-package com.github.gdc.cssps.model;
+package com.github.gdc.cssps.model.exam;
 
+import com.github.gdc.cssps.model.AuditedModel;
+import com.github.gdc.cssps.model.school.Subject;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,11 +12,15 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
 /**
- *
+ * An Exam models one that is taken periodically, be it yearly , monthly etc. As of this implementation,
+ * the subjects taken per exam are directly defined here, however this should be in the future removed to ExamSession,
+ * as already defined in ExamSession implementation.
+ * 
  * @author Edem Morny
  */
 @Entity
 public class Exam extends AuditedModel<Exam> {
+    private static final long serialVersionUID = -6380239434086393159L;
 
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)

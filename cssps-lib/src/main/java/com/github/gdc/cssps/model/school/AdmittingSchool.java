@@ -1,4 +1,4 @@
-package com.github.gdc.cssps.model;
+package com.github.gdc.cssps.model.school;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,11 +20,11 @@ public class AdmittingSchool extends OriginSchool {
     
     @OneToMany
     @JoinTable(
-        name = "school_programmes",
+        name = "school_limits",
         joinColumns = {@JoinColumn(name = "school_id")},
-        inverseJoinColumns = {@JoinColumn(name = "programme_id")}
+        inverseJoinColumns = {@JoinColumn(name = "limit_id")}
     )
-    private Set<Programme> programmes = new HashSet<Programme>();
+    private Set<AdmissionLimit> admissionLimits = new HashSet<AdmissionLimit>();
 
     @Enumerated(EnumType.STRING)
     private AcceptedGender acceptedGender;
@@ -39,12 +39,12 @@ public class AdmittingSchool extends OriginSchool {
 
     
 
-    public void setProgrammes(Set<Programme> programmes) {
-        this.programmes = programmes;
+    public void setAdmissionLimit(Set<AdmissionLimit> programmes) {
+        this.admissionLimits = programmes;
     }
 
-    public Set<Programme> getProgrammes() {
-        return programmes;
+    public Set<AdmissionLimit> getAdmissionLimit() {
+        return admissionLimits;
     }
 
     

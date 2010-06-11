@@ -12,10 +12,11 @@ import javax.persistence.MappedSuperclass;
  */
 @MappedSuperclass
 public abstract class AuditedModel<E extends Model> extends Model<E>{
+    private static final long serialVersionUID = -1750413293588647832L;
     private Date createdOn;
     private Date lastModifiedDate;
     private User createdBy;
-
+    private boolean deleted;
     public User getCreatedBy() {
         return createdBy;
     }
@@ -38,6 +39,14 @@ public abstract class AuditedModel<E extends Model> extends Model<E>{
 
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     

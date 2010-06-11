@@ -3,7 +3,7 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
     <appender name="FILE_APPENDER"
                 class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="${catalina.home}/bidslogs/bids.log" />
+        <param name="File" value="${catalina.home}/csspslogs/cssps.log" />
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <param name="Append" value="true"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -22,7 +22,7 @@
         <priority value="INFO"/>
         <appender-ref ref="CONSOLE"/>
     </category>
-    <category name="org.jboss.seam">
+    <category name="org.springframework">
         <priority value="INFO"/>
         <appender-ref ref="CONSOLE"/>
     </category>

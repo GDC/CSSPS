@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/csps-web">
-    <Resource name="jdbc/csps" auth="Container"
-              type="javax.sql.DataSource" maxActive="100" maxIdle="30" maxWait="10000"
-              driverClassName="org.hsqldb.jdbcDriver" username="sa" password=""
-              url="jdbc:hsqldb:file:${catalina.home}/data/cssps;shutdown=true"/>
+  <Resource auth="Container" driverClassName="org.hsqldb.jdbcDriver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/csps" password="" type="javax.sql.DataSource" url="jdbc:hsqldb:file:${catalina.home}/data/cssps;shutdown=true" username="sa"/>
 </Context>

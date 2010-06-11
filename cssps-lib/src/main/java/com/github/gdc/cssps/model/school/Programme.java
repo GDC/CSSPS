@@ -1,7 +1,8 @@
 
 
-package com.github.gdc.cssps.model;
+package com.github.gdc.cssps.model.school;
 
+import com.github.gdc.cssps.model.AuditedModel;
 import javax.persistence.Entity;
 
 /**

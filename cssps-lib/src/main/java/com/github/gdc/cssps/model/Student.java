@@ -1,5 +1,6 @@
 package com.github.gdc.cssps.model;
 
+import com.github.gdc.cssps.model.exam.ExamSession;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;

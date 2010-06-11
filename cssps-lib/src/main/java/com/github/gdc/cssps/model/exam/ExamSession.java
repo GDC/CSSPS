@@ -1,11 +1,20 @@
 
-package com.github.gdc.cssps.model;
+package com.github.gdc.cssps.model.exam;
 
+import com.github.gdc.cssps.model.AuditedModel;
+import com.github.gdc.cssps.model.school.Choice;
+import com.github.gdc.cssps.model.school.OriginSchool;
+import com.github.gdc.cssps.model.Student;
+import com.github.gdc.cssps.model.school.Subject;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  * An ExamSession encapsulated data about when a student sat an exam, and at what school the student sat
@@ -14,8 +23,10 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class ExamSession extends AuditedModel<ExamSession>{
+    @OneToMany(mappedBy = "examSession")
+    private List<SubjectResult> subjectResults;
     @OneToMany(mappedBy = "session")
-    private List<Choice> choices;
+    private List<Choice> choices = new ArrayList<Choice>();
     private static final long serialVersionUID = 4450998950834796171L;
     @ManyToOne
     private Exam exam;
@@ -23,7 +34,8 @@ public class ExamSession extends AuditedModel<ExamSession>{
     private Student student;
     @OneToOne
     private OriginSchool originSchool;
-
+    @Transient
+    private Set<Subject> subjectsTaken = new HashSet<Subject>();
     public Exam getExam() {
         return exam;
     }
@@ -75,6 +87,23 @@ public class ExamSession extends AuditedModel<ExamSession>{
     public void setChoices(List<Choice> choices) {
         this.choices = choices;
     }
+    /**
+     * Determines the subjects that were taken in this exam session.
+     * Currently read from the Exam directly, but in future implementations
+     * this should be where subjects taken should be determined
+     * @return
+     */
+    public Set<Subject> getSubjectsTaken() {
+        if(subjectsTaken.isEmpty())
+        if(exam !=null)return exam.getSubjects();
+        return subjectsTaken;
+    }
+
+    public void setSubjectsTaken(Set<Subject> subjectsTaken) {
+        this.subjectsTaken = subjectsTaken;
+    }
+
+
 
     
 }

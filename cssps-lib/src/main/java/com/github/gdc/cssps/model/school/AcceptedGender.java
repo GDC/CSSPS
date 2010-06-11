@@ -1,4 +1,4 @@
-package com.github.gdc.cssps.model;
+package com.github.gdc.cssps.model.school;
 
 /**
  *Represents the different types of gender that are accepted into a particular school
@@ -6,11 +6,13 @@ package com.github.gdc.cssps.model;
  */
 public enum AcceptedGender {
 
-    MALE("Male"), FEMALE("Female"), MIXED("Mixed");
+    MALE("Male",'M'), FEMALE("Female",'F'), MIXED("Mixed",'A');
     private String label;
+    private Character symbol;
 
-    private AcceptedGender(String label) {
+    private AcceptedGender(String label,Character symbol) {
         this.label = label;
+        this.symbol = symbol;
     }
 
     public AcceptedGender getFEMALE() {
@@ -20,6 +22,11 @@ public enum AcceptedGender {
     public String getLabel() {
         return label;
     }
+
+    public Character getSymbol() {
+        return symbol;
+    }
+    
 
     public AcceptedGender getMALE() {
         return MALE;
